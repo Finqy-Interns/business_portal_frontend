@@ -1,0 +1,108 @@
+/* Hierarchy.css */
+
+/* Container styles */
+.hierarchy-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Heading styles */
+  .hierarchy-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .hierarchy-container h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  /* Date selection styles */
+  .date-selection {
+    margin-top: 3%;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-left: 20%;
+  }
+  
+  .date-selection input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+  }
+  
+  .date-selection select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Input fields styles */
+  .input-fields {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-left: 20%;
+  }
+  
+  .input-fields input[type="text"] {
+    width: auto;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Button styles */
+  .create_hierarchy_button {
+    padding: 0.5% 1%;
+    background-color: #ff0000;
+    color: black;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    cursor: pointer;
+    margin-left: 20%;
+    
+  }
+  
+  .create_hierarchy_button:hover {
+    background-color: #e3e6ed;
+    color: black;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+  }
+  
+  /* Table styles */
+  .hierarchy-table {
+    width: 60%;
+    margin-top: 3%;
+    margin-left: 20%; /* Center the table */
+    border-collapse: collapse;
+  }
+  
+  .hierarchy-table th,
+  .hierarchy-table td {
+   
+    padding: 8px;
+    border: 1px solid #000000;
+  }
+  
+  .hierarchy-table th {
+    background-color: #ffffff;
+    text-align: center; 
+    color: black;
+  }
+  
+  .hierarchy-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .hierarchy-table tr:hover {
+    background-color: #f48282;
+  }
+  

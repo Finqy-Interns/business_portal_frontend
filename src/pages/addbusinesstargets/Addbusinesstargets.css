@@ -1,0 +1,420 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #eef5fe;
+  margin: 0;
+    padding: 0;
+}
+
+/* Pre css */
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.nav_image {
+  display: flex;
+  min-width: 55px;
+  justify-content: center;
+}
+
+.nav_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  /* float: left; */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 270px;
+  background: gray;
+  padding: 15px 10px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.maincontent {
+  padding: 20px;
+  transition: margin-left 2s ease;
+  /* Add a transition for smooth animation */
+}
+
+/* .sidebar.locked {
+  width: 0;
+
+} */
+
+.maincontent.full-width {
+  margin-left: 0;
+  /* Adjust margin-left when sidebar is locked */
+}
+.sidebar.close {
+  width: calc(55px + 20px);
+}
+
+.logo_items {
+  gap: 8px;
+}
+
+.sidebar.close .logo_name,
+.sidebar.close #lock-icon,
+.sidebar.close #sidebar-close {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#lock-icon,
+#sidebar-close {
+  padding: 10px;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  margin-left: -4px;
+  transition: all 0.3s ease;
+}
+
+#sidebar-close {
+  display: none;
+  color: white;
+}
+
+.menu_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 40px;
+  overflow-y: auto;
+  height: calc(100% - 82px);
+}
+
+.menu_container::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  list-style: none;
+
+}
+
+.link {
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.item:hover .fa-solid,
+.item:hover .link.flex {
+  color: darkred;
+  background-color: white;
+}
+
+.link span {
+  white-space: nowrap;
+}
+
+.link i {
+  height: 50px;
+  min-width: 55px;
+  display: flex;
+  font-size: 22px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: white;
+}
+
+.sidebar_profile {
+  padding-top: 15px;
+  margin-top: 15px;
+  gap: 15px;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar */
+/*.navbar {
+  max-width: auto;
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 0 0 8px 8px;
+    justify-content: space-between;
+  }
+  
+  .navbar img {
+    height: 40px;
+    width: 40px;
+    margin-left: 20px;
+  }
+  
+  .navbar {
+    align-items: center;
+    max-width: 50%;
+    transform: translateX(0%);
+  }
+  
+  /* heading */
+/*.heading{
+  text-align: center;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  */
+/* Responsive */
+/*@media screen and (max-width: 1100px) {
+  .navbar {
+      left: 65%;
+    }
+  }
+  
+  @media screen and (max-width: 800px) {
+    .sidebar {
+      left: 0;
+      z-index: 1000;
+    }
+  
+    .sidebar.close {
+      left: -100%;
+    }
+  
+    #sidebar-close {
+      display: block;
+    }
+  
+    #lock-icon {
+      display: none;
+    }
+  
+  }
+  
+  */
+/* Assuming the class name is 'example-class' and the IDs are 'id1', 'id2', and 'id3' */
+
+/*.dropdown-container #year option:hover,
+.dropdown-container #productDropdown option:hover,
+.dropdown-container #subproductDropdown option:hover .dropdown-container #channelDropdown option:hover .dropdown-container #currency-dropdown option:hover {
+  background-color: yellow;
+}
+
+*/
+
+.heading-panel {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+}
+
+.dropdown-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+}
+
+.dropdown-container select {
+  margin: 0 10px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+  width: 180px;
+}
+
+.dropdown-container select:hover,
+.dropdown-container select:focus {
+  border-color: darkred;
+}
+
+.dropdown-container select option {
+  background-color: #fff;
+  color: #333;
+}
+
+/* CSS for table */
+.table-container {
+  width: 100%;
+  overflow-x: scroll;
+  margin: 30px auto;
+  white-space: nowrap;
+}
+
+table {
+  width: fit-content;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  border: 2px solid black;
+}
+
+/*thead {
+  background-color: white;
+}*/
+
+thead tr th {
+  background-color: grey;
+  color: white;
+}
+
+.table-row {
+  background-color: gray;
+  color: white;
+}
+/* modal CSS Start */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* height: 100%; */
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+
+  background-color: #fefefe;
+  margin: 10% auto;
+  margin-bottom: 100%;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.modal_container {
+  /* height: 60vh; */
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: #fcfcfc;
+}
+
+.modal_card {
+  border-radius: 10px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+  width: 600px;
+  height: 260px;
+  background-color: #ffffff;
+  padding: 10px 30px 40px;
+}
+
+.modal_card h3 {
+  font-size: 22px;
+  font-weight: 600;
+
+}
+
+.drop_box {
+  margin: 10px 0;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 3px dotted #a3a3a3;
+  border-radius: 5px;
+}
+
+.drop_box h4 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #2e2e2e;
+}
+
+.drop_box p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #a3a3a3;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: darkred;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #005af0;
+  padding: 10px 20px;
+  border: none;
+  outline: 1px solid #010101;
+}
+
+.form input {
+  margin: 10px 0;
+  width: 100%;
+  background-color: #e2e2e2;
+  border: none;
+  outline: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+}
+
+/* modal CSS end */
+
+.sep_button {
+  float: right;
+}

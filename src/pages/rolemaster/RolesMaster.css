@@ -1,0 +1,95 @@
+.user-master-page {
+  max-width: 100%;
+    margin-left: 20%;
+    padding: 20px;
+  }
+
+.form {
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.input_container {
+  /* display: flex; */
+  margin-bottom: 10px;
+}
+.input_container input {
+  width: 200px;
+  margin-right: 10px;
+  padding: 5px;
+  border: solid black;
+    background-color: red;
+}
+
+.dropdown-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.dropdown-container .dropdown {
+  margin-right: 10px;
+}
+
+.dropdown-container label {
+  margin-bottom: 5px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.checkbox-container input {
+  margin-right: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #a70404;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th,
+.user-table td {
+  padding: 10px;
+  border: 1px solid #000000;
+}
+
+.user-table th {
+  background-color: #ffffff;
+  font-weight: bold;
+  color: #000;
+}
+
+.user-table td {
+  text-align: center;
+}
+
+.user-table button {
+  padding: 5px 10px;
+  background-color: #c40000;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.react-select--inline .react-select__value-container {
+  /* height: 1%; */
+  width: 300px;
+}
+
+.react-select--inline {
+  display: inline-block;
+  margin: 0 0.25em;
+}
