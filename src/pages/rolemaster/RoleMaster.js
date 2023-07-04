@@ -39,7 +39,7 @@ const RoleMaster = ({ setActivePage }) => {
 //     try {
 //       const token = getToken();
 //       const response = await axios.post(
-//         "http://localhost/api/admin/role/add",
+//         "localhost/api/admin/role/add",
 //         {
 //           permissions: permissionValuesToSend,
 //           name: newRoleName,
@@ -101,7 +101,7 @@ const RoleMaster = ({ setActivePage }) => {
      if (editMode && editableProduct) {
        // Edit mode, use PUT request
        response = await axios.put(
-         `http://${process.env.REACT_APP_BASE_URL}/api/admin/role/edit/${editableProduct.role_id}`,
+         `${process.env.REACT_APP_BASE_URL}/api/admin/role/edit/${editableProduct.role_id}`,
          {
            permissions: permissionValuesToSend,
            name: newRoleName,
@@ -116,7 +116,7 @@ const RoleMaster = ({ setActivePage }) => {
      } else {
        // Add mode, use POST request
        response = await axios.post(
-         `http://${process.env.REACT_APP_BASE_URL}/api/admin/role/add` ,
+         `${process.env.REACT_APP_BASE_URL}/api/admin/role/add` ,
          {
            permissions: permissionValuesToSend,
            name: newRoleName,
@@ -155,7 +155,7 @@ const RoleMaster = ({ setActivePage }) => {
     try {
       const token = getToken();
       const response = await axios.get(
-        `http://${process.env.REACT_APP_BASE_URL}/api/admin/role`,
+        `${process.env.REACT_APP_BASE_URL}/api/admin/role`,
         {
           headers: {
             authorization: `Bearer${token}`,
@@ -178,7 +178,7 @@ const RoleMaster = ({ setActivePage }) => {
       const token = getToken();
 
       const response = await axios.get(
-        `http://${process.env.REACT_APP_BASE_URL}/api/admin/permission`,
+        `${process.env.REACT_APP_BASE_URL}/api/admin/permission`,
         {
           headers: {
             authorization: `Bearer${token}`,

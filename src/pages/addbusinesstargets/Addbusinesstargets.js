@@ -129,7 +129,7 @@ const AddBusinessTargets = ({ setActivePage }) => {
         if (productId && selectedFY) {
           const token = getToken();
           var response = await fetch(
-            `http://${process.env.REACT_APP_BASE_URL}/api/user/hierarchy/target/${productId}/${selectedFY}/save`,
+            `${process.env.REACT_APP_BASE_URL}/api/user/hierarchy/target/${productId}/${selectedFY}/save`,
             {
               headers: {
                 authorization: `Bearer${token}`, // Replace with your actual token
@@ -182,7 +182,7 @@ const AddBusinessTargets = ({ setActivePage }) => {
         formData.append("file", selectedFile);
         // console.log('file',selectedFile)
         const response = await axios.put(
-          `http://${process.env.REACT_APP_BASE_URL}/api/user/upload/excel/${productId}`,
+          `${process.env.REACT_APP_BASE_URL}/api/user/upload/excel/${productId}`,
           formData,
           {
             headers: {
@@ -223,7 +223,7 @@ const AddBusinessTargets = ({ setActivePage }) => {
 
       // API call to add
       const response = await axios.put(
-        `http://${process.env.REACT_APP_BASE_URL}/api/user/add/target/${productId}`,
+        `${process.env.REACT_APP_BASE_URL}/api/user/add/target/${productId}`,
         updatedData,
         {
           headers: {
@@ -263,7 +263,7 @@ const AddBusinessTargets = ({ setActivePage }) => {
 
       // API call to add
       const response = await axios.put(
-        `http://${process.env.REACT_APP_BASE_URL}/api/user/add/target/${productId}`,
+        `${process.env.REACT_APP_BASE_URL}/api/user/add/target/${productId}`,
         updatedData,
         {
           headers: {
@@ -294,8 +294,8 @@ const AddBusinessTargets = ({ setActivePage }) => {
         status="target"
         style={{ marginLeft: "280px" }}
         statusToDisplay="Target"
-        demoURL={`http://${process.env.REACT_APP_BASE_URL}/api/user/demoExcel`}
-        uploadURL={`http://${process.env.REACT_APP_BASE_URL}/api/user/upload/excel`}
+        demoURL={`${process.env.REACT_APP_BASE_URL}/api/user/demoExcel`}
+        uploadURL={`${process.env.REACT_APP_BASE_URL}/api/user/upload/excel`}
         demoExcelName={`${productName} Target`}
         showDropDown={true}
         dataObject={{

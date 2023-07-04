@@ -88,7 +88,7 @@ const  UserMaster = ({ setActivePage }) => {
     try {
       const token = getToken()
       const response = await axios.get(
-        `http://${process.env.REACT_APP_BASE_URL}/api/admin/user`,
+        `${process.env.REACT_APP_BASE_URL}/api/admin/user`,
         {
           headers: {
             authorization: `Bearer${token}`, // Replace with your actual token

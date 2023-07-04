@@ -24,7 +24,7 @@
 //     };
 
 //     // Send the login request to the backend
-//     fetch("http://localhost/api/login", {
+//     fetch("localhost/api/login", {
 //       method: "POST",
 //       headers: {
 //         "Content-Type": "application/json",
@@ -140,7 +140,7 @@ const LoginForm = () => {
     };
 
     // Send the login request to the backend
-    fetch(`http://${process.env.REACT_APP_BASE_URL}/api/login`, {
+    fetch(`${process.env.REACT_APP_BASE_URL}/api/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

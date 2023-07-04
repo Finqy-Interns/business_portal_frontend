@@ -211,9 +211,9 @@ const AddNumbers = ({ setActivePage }) => {
       if (tokenValidity) {
         if (productId && selectedFY) {
           const token = getToken();
-          // console.log(`http://localhost/api/user/hierarchy/target/${productId}/${selectedFY}/save`)
+          // console.log(`localhost/api/user/hierarchy/target/${productId}/${selectedFY}/save`)
           const response = await fetch(
-            `http://${process.env.REACT_APP_BASE_URL}/api/user/hierarchy/target/${productId}/${selectedFY}/publish`,
+            `${process.env.REACT_APP_BASE_URL}/api/user/hierarchy/target/${productId}/${selectedFY}/publish`,
             {
               headers: {
                 authorization: `Bearer${token}`, // Replace with your actual token
@@ -244,10 +244,10 @@ const AddNumbers = ({ setActivePage }) => {
     if (productId) {
       // const month = 'june'
       // console.log('month',month)
-      // http://localhost/api/user/hierarchy/actual/1/2024/save/may
-      // console.log(`http://localhost/api/user/hierarchy/actual/${productId}/${selectedFY}/save/${month}`)
+      // localhost/api/user/hierarchy/actual/1/2024/save/may
+      // console.log(`localhost/api/user/hierarchy/actual/${productId}/${selectedFY}/save/${month}`)
       const response = await fetch(
-        `http://${process.env.REACT_APP_BASE_URL}/api/user/hierarchy/actual/${productId}/${selectedFY}/save/${month}`,
+        `${process.env.REACT_APP_BASE_URL}/api/user/hierarchy/actual/${productId}/${selectedFY}/save/${month}`,
         {
           headers: {
             authorization: `Bearer${token}`,
@@ -294,7 +294,7 @@ const AddNumbers = ({ setActivePage }) => {
         formData.append("file", selectedFile);
         // console.log('file',selectedFile)
         const response = await axios.put(
-          `http://localho${process.env.REACT_APP_BASE_URL}st/api/user/upload/excel/${productId}`,
+          `localho${process.env.REACT_APP_BASE_URL}st/api/user/upload/excel/${productId}`,
           formData,
           {
             headers: {
@@ -342,7 +342,7 @@ const AddNumbers = ({ setActivePage }) => {
       // API call to add
       // const month = 'june'
       const response = await axios.put(
-        `http://${process.env.REACT_APP_BASE_URL}calhost/api/user/add/actual/${productId}/${month}`,
+        `${process.env.REACT_APP_BASE_URL}calhost/api/user/add/actual/${productId}/${month}`,
         updatedData,
         {
           headers: {
@@ -384,7 +384,7 @@ const AddNumbers = ({ setActivePage }) => {
       // API call to add
       // const month = 'june'
       const response = await axios.put(
-        `http://192/api/user/add/actual/${productId}/${month}`,
+        `192/api/user/add/actual/${productId}/${month}`,
         updatedData,
         {
           headers: {
@@ -422,7 +422,7 @@ const AddNumbers = ({ setActivePage }) => {
         style={{ marginLeft: "280px" }}
         status="actual"
         statusToDisplay="Actual"
-        demoURL={`http://${process.env.REACT_APP_BASE_URL}/api/user/demoExcel`}
+        demoURL={`${process.env.REACT_APP_BASE_URL}/api/user/demoExcel`}
         showDropDown={true}
         demoExcelName={`${productName} Actual ${month}`}
         dataObject={{

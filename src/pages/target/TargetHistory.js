@@ -98,7 +98,7 @@ const TargetHistory = ({ setActivePage }) => {
         if (productId && selectedFY) {
           const token = getToken();
           const response = await fetch(
-            `http://${process.env.REACT_APP_BASE_URL}/api/user/hierarchy/target/${productId}/${selectedFY}/publish/`,
+            `${process.env.REACT_APP_BASE_URL}/api/user/hierarchy/target/${productId}/${selectedFY}/publish/`,
             {
               headers: {
                 authorization: `Bearer${token}`, // Replace with your actual token

@@ -34,7 +34,7 @@ const ActualHistory = ({ setActivePage }) => {
           if (productId && selectedFY) {
             const token = getToken();
             const response = await fetch(
-              `http://${process.env.REACT_APP_BASE_URL}/api/user/hierarchy/actual/${productId}/${selectedFY}/publish/all`,
+              `${process.env.REACT_APP_BASE_URL}/api/user/hierarchy/actual/${productId}/${selectedFY}/publish/all`,
               {
                 headers: {
                   authorization: `Bearer${token}`,

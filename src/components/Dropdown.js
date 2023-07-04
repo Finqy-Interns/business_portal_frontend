@@ -26,7 +26,7 @@ function Dropdown({ ...props }) {
     const token = getToken()
 
 
-    fetch(`http://${process.env.REACT_APP_BASE_URL}/api/user/hierarchy`, {
+    fetch(`${process.env.REACT_APP_BASE_URL}/api/user/hierarchy`, {
       headers: {
         authorization: `Bearer${token}`, // Replace with your actual token
       },

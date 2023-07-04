@@ -147,7 +147,7 @@ const addProduct = async (event) => {
   try {
     // Send a POST request to the API endpoint to add the new product
     const response = await axios.post(
-      `http://${process.env.REACT_APP_BASE_URL}/api/admin/product`,
+      `${process.env.REACT_APP_BASE_URL}/api/admin/product`,
       newProduct
     );
 
@@ -170,7 +170,7 @@ const addProduct = async (event) => {
 async function fetchproductList() {
   try {
     const response = await axios.get(
-      `http://${process.env.REACT_APP_BASE_URL}/api/admin/product`,
+      `${process.env.REACT_APP_BASE_URL}/api/admin/product`,
       {
         headers: {
           authorization:
@@ -194,7 +194,7 @@ async function fetchproductList() {
 async function fetchsubproductList() {
   try {
     const response = await axios.get(
-      `http://${process.env.REACT_APP_BASE_URL}/api/admin/subproduct`,
+      `${process.env.REACT_APP_BASE_URL}/api/admin/subproduct`,
       {
         headers: {
           authorization:
@@ -218,7 +218,7 @@ async function fetchsubproductList() {
 async function fetchchannelList() {
   try {
     const response = await axios.get(
-      `http://${process.env.REACT_APP_BASE_URL}/api/admin/channel`,
+      `${process.env.REACT_APP_BASE_URL}/api/admin/channel`,
       {
         headers: {
           authorization:
