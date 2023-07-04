@@ -190,10 +190,10 @@ const AddNumbers = ({ setActivePage }) => {
       } else {
         yearSuffix = endYear.slice(-2);
       }
-      console.log("months", {
-        displayValue: `${oldM[0].displayValue}-${yearSuffix}`,
-        value: oldM[0].value,
-      });
+      // console.log("months", {
+      //   displayValue: `${oldM[0].displayValue}-${yearSuffix}`,
+      //   value: oldM[0].value,
+      // });
       setMonths([
         {
           displayValue: `${oldM[0].displayValue}-${yearSuffix}`,
@@ -292,7 +292,7 @@ const AddNumbers = ({ setActivePage }) => {
 
         const formData = new FormData();
         formData.append("file", selectedFile);
-        console.log("file", selectedFile);
+        console.log("file", `${process.env.REACT_APP_BASE_URL}/api/user/upload/excel/${productId}`);
         const response = await axios.put(
           `${process.env.REACT_APP_BASE_URL}/api/user/upload/excel/${productId}`,
           formData,
@@ -343,7 +343,7 @@ const AddNumbers = ({ setActivePage }) => {
       // API call to add
       // const month = 'june'
       const response = await axios.put(
-        `${process.env.REACT_APP_BASE_URL}calhost/api/user/add/actual/${productId}/${month}`,
+        `${process.env.REACT_APP_BASE_URL}/api/user/add/actual/${productId}/${month}`,
         updatedData,
         {
           headers: {
@@ -385,7 +385,7 @@ const AddNumbers = ({ setActivePage }) => {
       // API call to add
       // const month = 'june'
       const response = await axios.put(
-        `192/api/user/add/actual/${productId}/${month}`,
+        `${process.env.REACT_APP_BASE_URL}/api/user/add/actual/${productId}/${month}`,
         updatedData,
         {
           headers: {
@@ -412,13 +412,6 @@ const AddNumbers = ({ setActivePage }) => {
   }
   return (
     <div style={{ display: "flex" }}>
-      {/* <span>
-        <h2>Actual</h2>{" "}
-      </span>
-      <span>
-        <h2>Target</h2>{" "}
-      </span> */}
-
       <TableAndDropdownComponent
         style={{ marginLeft: "280px" }}
         status="actual"

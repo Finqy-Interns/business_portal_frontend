@@ -44,12 +44,12 @@ const TargetHistory = ({ setActivePage }) => {
   }, [])
 
   useEffect(() => {
-    setProductData(null)
-    setProductDataCurrency(null)
-    setSubProductDataCurrency(null)
-    setSubProductData(null)
-    setChannelData(null)
-    setChannelDataCurrency(null)
+    setProductData([])
+    setProductDataCurrency([])
+    setSubProductDataCurrency([])
+    setSubProductData([])
+    setChannelData([])
+    setChannelDataCurrency([])
   }, [productId])
 
 
@@ -93,7 +93,7 @@ const TargetHistory = ({ setActivePage }) => {
   async function fetchData() {
     try {
       const tokenValidity = checkTokenValidity();
-
+      setError("")
       if (tokenValidity) {
         if (productId && selectedFY) {
           const token = getToken();
@@ -112,8 +112,8 @@ const TargetHistory = ({ setActivePage }) => {
             setProductData(jsonData.data.product);
             setProductDataCurrency(jsonData.data.product);
           } else {
-            setProductId("");
-            setError("No Business Target found!");
+            // setProductId("");
+            // setError("No Business Target found!");
           }
         }
       } else {
