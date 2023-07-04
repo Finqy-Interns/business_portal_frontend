@@ -292,9 +292,9 @@ const AddNumbers = ({ setActivePage }) => {
 
         const formData = new FormData();
         formData.append("file", selectedFile);
-        // console.log('file',selectedFile)
+        console.log("file", selectedFile);
         const response = await axios.put(
-          `localho${process.env.REACT_APP_BASE_URL}st/api/user/upload/excel/${productId}`,
+          `${process.env.REACT_APP_BASE_URL}st/api/user/upload/excel/${productId}`,
           formData,
           {
             headers: {
@@ -316,6 +316,7 @@ const AddNumbers = ({ setActivePage }) => {
         alert("Please upload correct excel file! Download Demo File");
       }
     } catch (err) {
+      console.log('errorsssssssssssssssssssssssssss', err)
       const { status, msg } = err?.response?.data;
       if (status === 3400) {
         alert(
