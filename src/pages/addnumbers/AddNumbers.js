@@ -294,7 +294,7 @@ const AddNumbers = ({ setActivePage }) => {
         formData.append("file", selectedFile);
         console.log("file", selectedFile);
         const response = await axios.put(
-          `${process.env.REACT_APP_BASE_URL}st/api/user/upload/excel/${productId}`,
+          `${process.env.REACT_APP_BASE_URL}/api/user/upload/excel/${productId}`,
           formData,
           {
             headers: {
