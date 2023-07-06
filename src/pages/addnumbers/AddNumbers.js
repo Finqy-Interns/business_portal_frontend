@@ -461,37 +461,54 @@ const AddNumbers = ({ setActivePage }) => {
           marginRight: "20px",
         }}
       >
-        <div className="dropdown-container">
+        {/* <div className="dropdown-container"> */}
 
-          {
-            targetData &&
+        {/* </div> */}
+        <div
+          className="dropdown-container"
+          style={{
+            flexDirection: "column",
+            marginTop: "0px",
+            // marginLeft: "33%",
+            textAlign: "center",
+            // float: "right",
+          }}
+        >
+          {targetData && (
+            <div style={{ justifyContent: "center" }}>
+              <label htmlFor="currency-dropdown1">Currency:</label>
+            </div>
+          )}
+          {targetData && (
             <>
-              <label htmlFor="currencyDropdown1">Currency:</label>
-              <select
-                id="currency-dropdown1"
-                value={currencyValue}
-                onChange={(e) => {
-                  if (productTargetDataCurrency) {
-                    setCurrencyValue(e.target.value);
-                    setAmount(
-                      e.target.value,
-                      targetData,
-                      setProductTargetDataCurrency,
-                      setSubProductTargetDataCurrency,
-                      setChannelTargetDataCurrency
-                    );
-                  }
-                }}
-              >
-                <option value="select">Select Currency</option>
-                <option value="absolute">Absolute</option>
-                <option value="crores">In Crores</option>
-                <option value="lakhs">In Lakhs</option>
-              </select>
+              <div style={{ textAlign: "center" }}>
+                <select
+                  id="currency-dropdown1"
+                  value={currencyValue}
+                  style={{ justifyContent: "center" }}
+                  onChange={(e) => {
+                    if (productTargetDataCurrency) {
+                      setCurrencyValue(e.target.value);
+                      setAmount(
+                        e.target.value,
+                        targetData,
+                        setProductTargetDataCurrency,
+                        setSubProductTargetDataCurrency,
+                        setChannelTargetDataCurrency
+                      );
+                    }
+                  }}
+                >
+                  <option value="select">Select Currency</option>
+                  <option value="absolute">Absolute</option>
+                  <option value="crores">In Crores</option>
+                  <option value="lakhs">In Lakhs</option>
+                </select>
+              </div>
             </>
-          }
+          )}
         </div>
-        <div style={{ marginTop: "55px" }}></div>
+        <div style={{ marginTop: "50px" }}></div>
         {productId && (
           <h3 style={{ fontWeight: "bold", textAlign: "center" }}>Target</h3>
         )}
@@ -507,32 +524,32 @@ const AddNumbers = ({ setActivePage }) => {
             // Sub Product Data
             // eslint-disable-next-line
             subProductTargetDataCurrency?.length > 0 &&
-            subProductTargetDataCurrency.map((sp, index) => {
-              if (sp) {
-                return (
-                  <div key={index}>
-                    <h3>Sub Product - {sp.name || sp.sp_name}</h3>
-                    <Table data={sp} months={months} />
-                  </div>
-                );
-              }
-            })
+              subProductTargetDataCurrency.map((sp, index) => {
+                if (sp) {
+                  return (
+                    <div key={index}>
+                      <h3>Sub Product - {sp.name || sp.sp_name}</h3>
+                      <Table data={sp} months={months} />
+                    </div>
+                  );
+                }
+              })
           }
           {
             // Channel Data
             // eslint-disable-next-line
             targetData &&
-            channelTargetDataCurrency &&
-            channelTargetDataCurrency.map((ch, index) => {
-              if (ch) {
-                return (
-                  <div key={index}>
-                    <h3>Channel - {ch.name || ch.c_name}</h3>
-                    <Table data={ch} months={months} />
-                  </div>
-                );
-              }
-            })
+              channelTargetDataCurrency &&
+              channelTargetDataCurrency.map((ch, index) => {
+                if (ch) {
+                  return (
+                    <div key={index}>
+                      <h3>Channel - {ch.name || ch.c_name}</h3>
+                      <Table data={ch} months={months} />
+                    </div>
+                  );
+                }
+              })
           }
         </div>
       </div>
