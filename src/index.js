@@ -31,10 +31,6 @@ function App() {
 
   const [activePage, setActivePage] = useState("");
 
-  useEffect(()=>{
-    console.log('ac',activePage)
-  },[activePage])
-
   return (
     <BrowserRouter>
       <Routes>
