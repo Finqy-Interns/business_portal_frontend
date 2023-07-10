@@ -182,7 +182,7 @@ const AddBusinessTargets = ({ setActivePage }) => {
         formData.append("file", selectedFile);
         // console.log('file',selectedFile)
         const response = await axios.put(
-          `${process.env.REACT_APP_BASE_URL}/api/user/upload/excel/${productId}`,
+          `${process.env.REACT_APP_BASE_URL}/api/user/upload/excel/${productId}/${selectedFY}`,
           formData,
           {
             headers: {
@@ -312,6 +312,7 @@ const AddBusinessTargets = ({ setActivePage }) => {
           error,
           showForm,
           loading,
+          selectedFY,
           // editStatus
         }}
         dataMethods={{

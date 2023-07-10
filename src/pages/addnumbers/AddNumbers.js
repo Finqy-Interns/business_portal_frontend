@@ -292,7 +292,7 @@ const AddNumbers = ({ setActivePage }) => {
 
         const formData = new FormData();
         formData.append("file", selectedFile);
-        console.log("file", `${process.env.REACT_APP_BASE_URL}/api/user/upload/excel/${productId}`);
+        console.log("file", `${process.env.REACT_APP_BASE_URL}/api/user/upload/excel/${productId}/${selectedFY}`);
         const response = await axios.put(
           `${process.env.REACT_APP_BASE_URL}/api/user/upload/excel/${productId}`,
           formData,
@@ -433,6 +433,7 @@ const AddNumbers = ({ setActivePage }) => {
           error,
           showForm,
           loading,
+          selectedFY
         }}
         dataMethods={{
           setProductDataCurrency,

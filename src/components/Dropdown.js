@@ -27,7 +27,8 @@ function Dropdown({ ...props }) {
   useEffect(() => {
     // Fetch data from the API
     const token = getToken()
-    fetch(`${process.env.REACT_APP_BASE_URL}/api/user/hierarchy`, {
+    const fy = props.selectedYear.split("-")[1]
+    fetch(`${process.env.REACT_APP_BASE_URL}/api/user/hierarchy/${fy}`, {
       headers: {
         authorization: `Bearer${token}`, // Replace with your actual token
       },

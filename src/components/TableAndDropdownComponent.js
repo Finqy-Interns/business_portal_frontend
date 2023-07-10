@@ -38,6 +38,7 @@ const TableAndDropdownComponent = ({
     fileInputRef,
     error,
     showForm,
+    selectedFY,
     loading,
     // editStatus
   } = dataObject;
@@ -84,7 +85,8 @@ const TableAndDropdownComponent = ({
     try {
       if (demoExcelName) {
         const token = getToken();
-        const response = await fetch(`${demoURL}/${productId}/${status}`, {
+        console.log('se',selectedFY)
+        const response = await fetch(`${demoURL}/${productId}/${status}/${selectedFY}`, {
           headers: {
             authorization: `Bearer${token}`,
           },
@@ -101,7 +103,7 @@ const TableAndDropdownComponent = ({
         link.href = URL.createObjectURL(blob);
         // console.log('data',)
         // link.download = `${productName} ${status === "target" ? "Target" : "Actual"}` || 'demo file';
-        link.download = demoExcelName;
+        link.download = demoExcelName+` ${selectedFY}`;
 
         // Programmatically click the link to start the download
         link.click();
