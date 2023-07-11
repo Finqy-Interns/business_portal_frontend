@@ -286,7 +286,7 @@ const AddNumbers = ({ setActivePage }) => {
       const selectedFile = e.target.files[0];
       const fileName = selectedFile["name"];
       // console.log(selectedFile)
-      if (fileName.indexOf(`${productName} Actual ${month}`) !== -1) {
+      if (fileName.indexOf(`${productName} Actual ${month} ${selectedFY}`) !== -1) {
         const selectedFile = e.target.files[0];
         const token = getToken();
 
@@ -294,7 +294,7 @@ const AddNumbers = ({ setActivePage }) => {
         formData.append("file", selectedFile);
         console.log("file", `${process.env.REACT_APP_BASE_URL}/api/user/upload/excel/${productId}/${selectedFY}`);
         const response = await axios.put(
-          `${process.env.REACT_APP_BASE_URL}/api/user/upload/excel/${productId}`,
+          `${process.env.REACT_APP_BASE_URL}/api/user/upload/excel/${productId}/${selectedFY}`,
           formData,
           {
             headers: {
