@@ -29,7 +29,7 @@ const Dashboard = ({ setActivePage }) => {
   async function getProducts(){
     try{
       const token = getToken()
-      const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/user/hierarchy`, {
+      const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/user/hierarchy/undefined`, {
         headers: {
           authorization: `Bearer${token}`, // Replace with your actual token
         },
@@ -39,7 +39,8 @@ const Dashboard = ({ setActivePage }) => {
 
       if(productsArray){
         const productNames = productsArray
-      .map(item => item.product.name);
+      .map(item => item.name);
+      console.log('names',productNames)
       setProducts(productNames)
       }
     }
@@ -69,7 +70,7 @@ const Dashboard = ({ setActivePage }) => {
             panes: {
               filters: {
                 expanded: false,
-                visible: true
+                visible: false
               },
             },
             background: models.BackgroundType.Transparent,
