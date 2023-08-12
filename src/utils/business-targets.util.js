@@ -12,8 +12,9 @@ function convertAmount(amount, currency) {
     } else if (currency === "lakhs") {
         const lakh = amount / 100000;
         return addCommas(lakh.toFixed(2)) + " L";
-    } else if (currency === "absolute") {
-        return addCommas(amount.toString());
+    } else if (currency === "absolute" || currency === "select") {
+      console.log(typeof amount)
+        return addCommas(parseFloat(amount).toFixed(2).toString());
     } else {
         return ""; // Return empty string for unsupported currency
     }

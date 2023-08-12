@@ -59,15 +59,15 @@ const Table = ({ data, months }) => {
                 <td>{p.displayValue}</td>
                 {
                   months.map((m, index2) => {
-                    var roundedString;
-                    if (productData[m.value]) {
-                      const mynumber = parseFloat(`${productData[m.value][p.dataValue]}`)
-                      const roundedNumber = Math.round(mynumber);
-                      roundedString = roundedNumber.toString();
-                      // console.log('m',`${}`);
-                    }
+                    // var roundedString;
+                    // if (productData[m.value]) {
+                    //   var mynumber = parseFloat(`${productData[m.value][p.dataValue]}`)
+                    //   roundedString = mynumber.toFixed(2).toString()
+                    //   // const roundedNumber = Math.round(mynumber);
+                    //   // roundedString = roundedNumber.toString();
+                    // }
                     return (
-                      productData[m.value] ? <td key={index2}>{roundedString}</td> : <td key={index2}></td>
+                      productData[m.value] ? <td key={index2}>{`${productData[m.value][p.dataValue]}`}</td> : <td key={index2}></td>
                     );
                   })
                 }
